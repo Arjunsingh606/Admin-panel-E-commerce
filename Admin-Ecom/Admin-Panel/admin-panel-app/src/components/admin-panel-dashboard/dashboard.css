@@ -1,0 +1,51 @@
+.admin-navbar {
+  background-color: #061639;
+  height: 100vh;
+}
+.dashboard-item a {
+  color: #fff;
+  text-decoration: none;
+}
+.nav-pills .nav-link.active {
+  background-color: #29b3c3 !important;
+}
+.nav-pills .nav-link {
+  border-radius: 0 !important;
+}
+.admin-navbar h3 {
+  color: #fff;
+  padding-left: 1rem;
+}
+/* style for user name */
+.user-name {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-name h5 {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+.delete-icon.logout {
+  cursor: pointer;
+}
+.color-picker {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.color-picker .product-color {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .product-details {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,137 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 3rem 0;
+}
+.form-field {
+  text-align: left;
+  padding-bottom: 10px;
+}
+.form-banner img {
+  width: -webkit-fill-available;
+}
+.btn.form-btn {
+  border: none;
+  width: -webkit-fill-available;
+  margin-top: 10px;
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 8px;
+}
+.btn.form-btn:hover {
+  background-color: #21a1e1;
+}
+.main-form {
+  background-color: white;
+  height: 100%;
+  padding: 3.5rem;
+}
+.error-text {
+  color: red;
+}
+.user-form {
+  justify-content: center;
+}
+.form-body {
+  background-color: #eaeaea;
+}
+.row.user-form {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 2rem 0;
+}
+.user-form .form-size {
+  padding-left: 0;
+  padding-right: 0;
+}
+.signup-form .form-field {
+  display: flex;
+  flex-direction: column;
+}
+.form-field input {
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #dee2e6;
+}
+.form-field select {
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #dee2e6;
+}
+.form-field input:focus {
+  box-shadow: none;
+  outline: none;
+  border: 2px solid #0d6efd40;
+}
+.form-field select:focus {
+  box-shadow: none;
+  outline: none;
+  border: 2px solid #0d6efd40;
+}
+.error-text {
+  color: red;
+}
+.form-field .error-border {
+  border: 1px solid red;
+}
+.sign-up-link {
+  padding-top: 1.5rem;
+}
+.sign-up-link a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+.addticket-btn {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+.addticket-btn button {
+  border: none;
+  padding: 7px 19px;
+}
+.addticket-btn .close-btn {
+  background-color: #093e52;
+}
+.addticket-btn .close-btn:hover {
+  background-color: #0d1417;
+}
+/* media query */
+@media screen and (max-width: 1430px) {
+  .main-form {
+    padding: 2.5rem;
+  }
+  .img-fluid.form-image {
+    height: 700px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .main-form {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form-size.form-banner {
+    display: none;
+  }
+  .filter-items {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 460px) {
+  .main-form {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+}

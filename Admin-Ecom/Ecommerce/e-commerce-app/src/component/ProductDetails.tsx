@@ -1,0 +1,275 @@
+import React, { useState, useEffect } from "react";
+import { Button, Modal, Image, Carousel } from "react-bootstrap";
+import { AddProduct, CartItems } from "../interface/InterfaceEcom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faIndianRupeeSign,
+  faMinus,
+  faPlus,
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import { RegisterFields } from "../interface/InterfaceAuth";
+
+interface DetailsProps {
+  show: boolean;
+  product: AddProduct[];
+  handleClose: () => void;
+  productId?: number | string;
+  setQuantity: (item: any) => void;
+  quantity: number | undefined;
+  setTotalPrice: (item: any) => void;
+  totalPrice: number | string | undefined;
+  customer: RegisterFields;
+  setCart: (value: CartItems[]) => void;
+  cart: CartItems[];
+}
+
+const ProductDetails: React.FC<DetailsProps> = ({
+  cart,
+  setCart,
+  customer,
+  product,
+  handleClose,
+  show,
+  productId,
+  setQuantity,
+  quantity,
+  setTotalPrice,
+}) => {
+  const [imageIndex, setImageIndex] = useState<number>(0);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  const clickedProduct: any = product.find((item) => {
+    return item.id === productId;
+  });
+
+  const handleIncreaseSlider = () => {
+    setImageIndex((prevIndex) =>
+      prevIndex === clickedProduct?.image.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handleDecreaseSlider = () => {
+    setImageIndex((prevIndex) =>
+      prevIndex === 0 ? clickedProduct?.image.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
+    setImageIndex(index);
+  };
+
+  const itemPrice = quantity! * clickedProduct?.price;
+
+  const handleIncreaseQty = () => {
+    setTotalPrice(itemPrice);
+    setQuantity((prevIndex: any) =>
+      prevIndex === clickedProduct.quantity - 0 ? 1 : prevIndex + 1
+    );
+  };
+
+  const handleDecreaseQty = () => {
+    setTotalPrice(itemPrice);
+    setQuantity((prevIndex: any) => (prevIndex === 1 ? 1 : prevIndex - 1));
+  };
+
+  let existingCartItem: any;
+
+  const getUserId = cart.filter((item: any) => item.userId === customer.id);
+
+  const handleAddToCart = async () => {
+    const productDetails = {
+      productId: clickedProduct.productId,
+      price: clickedProduct.price,
+      quantity: quantity,
+      userId: customer.id,
+      productName: clickedProduct.productName,
+      totalPrice: itemPrice,
+      image: clickedProduct.image[0],
+    };
+
+    const existItem = cart.findIndex((item) => item.productId === clickedProduct.productId);
+    const existProduct = cart.find((item) => item.productId === clickedProduct.productId && item.userId === customer.id);
+
+    if (existItem !== -1 && existProduct?.userId === customer.id) {
+      const updatedCart: any = [...cart];
+      updatedCart[existItem].quantity += quantity;
+      updatedCart[existItem].totalPrice += itemPrice;
+
+      try {
+        const data = await fetch(
+          `http://localhost:4000/cart/${updatedCart[existItem].id}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              ...productDetails,
+              quantity: updatedCart[existItem].quantity,
+              totalPrice: updatedCart[existItem].totalPrice,
+            }),
+          }
+        );
+
+        const formData = await data.json();
+        if (formData) {
+          setCart(updatedCart);
+          handleClose();
+        }
+      } catch (error) {
+        console.error("Error updating cart item:", error);
+      }
+    } else {
+      try {
+        const data = await fetch("http://localhost:4000/cart", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productDetails),
+        });
+        const formData = await data.json();
+        if (formData) {
+          setCart([...cart, formData]);
+          handleClose();
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+    }
+  };
+
+  return (
+    <div>
+      <Modal show={show} onHide={handleClose} size="xl">
+        {product &&
+          product.map(
+            (item, index: number) =>
+              item.id === productId && (
+                <div key={item.id}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>{item.productName}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+
+                    <div className="product-details">
+                      <div className="product-images">
+                        {/* {clickedProduct.image &&
+                          clickedProduct.image.map((item: any, index: number) => {
+                            return (
+                              <div>
+                                <div
+                                  key={index}
+                                  onClick={() => handleImageClick(index)}
+                                >
+                                  <div className={`image-thumbnail ${index === selectedImageIndex && "selected"}`}>
+                                    {index === imageIndex && (
+                                      <Image src={`data:image/png;base64 ${item}`} alt={item.productName} />
+                                    )}
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            );
+                          })} */}
+                        {clickedProduct.image &&
+                          clickedProduct.image.map((item: any, index: number) => (
+                            <div key={index} onClick={() => handleImageClick(index)}>
+                              <div className={`image-thumbnail ${index === selectedImageIndex && "selected"}`}>
+                                {index === imageIndex && (
+                                  <Image src={item} alt={item.productName} fluid />
+                                )}
+                              </div>
+                            </div>
+                          ))}
+
+                      </div>
+                      <div className="product-name">
+                        <h4>{item.productName}</h4>
+                        <p>{item.description}</p>
+                        <div className="product-price">
+                          <p>
+                            <FontAwesomeIcon icon={faIndianRupeeSign} />
+                            {item.price}
+                          </p>
+                          <p>Available Quantity - {item.quantity}</p>
+                        </div>
+
+                        <div className="details-button">
+                          <Button
+                            onClick={handleDecreaseQty}
+                            disabled={clickedProduct <= 1 || quantity === 0}
+                          >
+                            <FontAwesomeIcon icon={faMinus} />
+                          </Button>
+                          <input
+                            type="number"
+                            value={existingCartItem ? existingCartItem.quantity + quantity : quantity}
+                            onChange={(e) => setQuantity(e.target.value)}
+                            min={0}
+                          />
+                          <Button
+                            onClick={handleIncreaseQty}
+                            disabled={
+                              clickedProduct === 1 || quantity === clickedProduct
+                            }
+                          >
+                            <FontAwesomeIcon icon={faPlus} />
+                          </Button>
+
+                          <div>Total price - {itemPrice}</div>
+                        </div>
+                        <div>
+                          <Button onClick={handleAddToCart}>Add to cart</Button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="image-preview-slider">
+                      <Button
+                        onClick={handleDecreaseSlider}
+                        disabled={
+                          clickedProduct?.image.length <= 1 || imageIndex === 0
+                        }
+                      >
+                        <FontAwesomeIcon icon={faChevronLeft} />
+                      </Button>
+                      {clickedProduct.image
+                        .slice(0, 4)
+                        .map((elem: any, index: any) => {
+                          return (
+                            <div
+                              key={index}
+                              onClick={() => handleImageClick(index)}
+                              className={`slider-image ${index === selectedImageIndex && "image-preview"
+                                }`}
+                            >
+                              <Image src={elem} alt={item.productName} />
+                            </div>
+                          );
+                        })}
+
+
+                      <Button
+                        onClick={handleIncreaseSlider}
+                        disabled={
+                          clickedProduct.image.length <= 1 ||
+                          imageIndex === clickedProduct?.image.length - 1
+                        }
+                      >
+                        <FontAwesomeIcon icon={faChevronRight} />
+                      </Button>
+                    </div>
+                  </Modal.Body>
+                </div>
+              )
+          )}
+      </Modal>
+    </div>
+  );
+};
+
+export default ProductDetails;

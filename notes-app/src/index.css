@@ -1,0 +1,19 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  font-family: "Poppins", sans-serif;
+  background-color: #d2d1d6;
+  overflow-x: hidden;
+}
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

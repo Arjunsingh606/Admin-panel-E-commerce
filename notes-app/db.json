@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "firstName": "Piyush",
+      "lastName": "Dudhat",
+      "email": "pd@gmail.com",
+      "password": "Piyush@123",
+      "role": "Admin",
+      "id": 1
+    },
+    {
+      "firstName": "Arjun",
+      "lastName": "Singh",
+      "email": "singharjun.u@gmail.com",
+      "password": "Singh@1234",
+      "id": 2
+    },
+    {
+      "firstName": "Rahul",
+      "lastName": "Savaliya",
+      "email": "player@gmail.com",
+      "password": "Rahul@1234",
+      "id": 3
+    },
+    {
+      "firstName": "Piyush",
+      "lastName": "Dudhat",
+      "email": "pd@123456gmail.com",
+      "password": "Pd@123456",
+      "id": 4
+    },
+    {
+      "firstName": "Arjun",
+      "lastName": "Singh",
+      "email": "singharjun.u@gmail.com",
+      "password": "Abc@1234",
+      "id": 5
+    }
+  ],
+  "notes": [
+    {
+      "title": "evevevevevveevev",
+      "label": "Blogging",
+      "color": "#ffdecb",
+      "date": "06/02/2024",
+      "creatByUserId": 4,
+      "textData": "<p>Wfgsdfsdfsdfdssdfsdfdsfsdfsdfsdf</p>",
+      "id": 4
+    },
+    {
+      "title": "Election commision",
+      "label": "Travelling",
+      "color": "rgba(12,177, 12, .3)",
+      "date": "07/02/2024",
+      "time": "11:49:10",
+      "creatByUserId": 2,
+      "textData": "<p>So,<strong> is it more important to d</strong>o a dissertation on a topic you are extremely keen on, and worry less about who you are doing it under, or is it quite an advisable path to do a Ph.D. under someone you connect with or think highly of, even if the topic matter is either less hyper-specifically that professor’s expertise, or if you do not actually plan or care to stick to that niche topic for very long? Because I believe just working under a seasoned mind can rub off on you, so it’s natural to want to study under a mind you hold in high regard.</p>",
+      "id": 8
+    },
+    {
+      "title": "Surat city",
+      "label": "Education",
+      "color": "rgba(221, 87, 233, .3)",
+      "date": "07/02/2024",
+      "time": "11:50:24",
+      "creatByUserId": 2,
+      "textData": "<p>The purpose of a <strong>PhD</strong> is to gain broad knowledge of the general field and deep knowledge of a particular aspect while producing one or more publishable works. This implies learning the research and publishing process in the field. Often in many fields it is a first work. In some fields publishing is required. But that is the general idea.</p>",
+      "id": 9
+    },
+    {
+      "title": "Education basic structure",
+      "label": "Finance",
+      "color": "rgba(73, 176, 243, .3)",
+      "date": "07/02/2024",
+      "time": "11:51:10",
+      "creatByUserId": 2,
+      "textData": "<p>It makes absolute sense to do a Ph.D. in a field you do not plan on staying in for the long haul. Ideally, you would keep this thought in the back of your head during your Ph.D. Try to keep a finger in the pie that does interest you. Read the \"other\" field's publications. If possible, make contacts there. Perhaps do a side gig or a collaboration. Bonus points if you find a way to combine your current and your target field in some way.</p>",
+      "id": 10
+    },
+    {
+      "title": "Trading view in asjhdgajhsdgas",
+      "label": "Trading",
+      "color": "rgba(182, 143, 243, .3",
+      "date": "07/02/2024",
+      "time": "11:55:39",
+      "creatByUserId": 2,
+      "textData": "<ul><li>Also, th<strong>ink about when you want to have a conversation with yo</strong>ur advisor about this long-term plan. This is probably not something you want to bring up when you interview for the Ph.D. position. But once you have established yourself and still plan on switching fields at some point (you might change your mind halfway through the Ph.D., after all), and have a good rapport with your advisor, it might be useful to talk to them. Some advisors might feel a little miffed if you left the field all of a sudden, but might have been helpful if you had told them earlier. After all, the advisor themselves switched fields at some point in their career (see above) and might have some advice or (again) contacts that might help your next steps.</li></ul>",
+      "id": 11
+    },
+    {
+      "title": " have established yourself and still plan",
+      "label": "Working",
+      "color": "rgba(133, 213, 208, .3)",
+      "date": "07/02/2024",
+      "time": "11:52:24",
+      "creatByUserId": 2,
+      "textData": "<p>Also, think about when you want to have a conversation with your advisor about this long-term plan. This is probably not something you want to bring up when you interview for the Ph.D. position. But once you have established yourself and still plan on switching fields at some point (you might change your mind halfway through the Ph.D., after all), and have a good rapport with your advisor, it might be useful to talk to them. Some advisors might feel a little miffed if you left the field all of a sudden, but might have been helpful if you had told them earlier. After all, the advisor themselves switched fields at some point in their career (see above) and might have some advice or (again) contacts that might help your next steps.</p>",
+      "id": 12
+    },
+    {
+      "title": " field's publications. If possible,",
+      "label": "Sports",
+      "color": "rgba(241, 251, 179, .3)",
+      "date": "07/02/2024",
+      "time": "11:53:38",
+      "creatByUserId": 2,
+      "textData": "<p>It <strong>makes absolute sense to </strong>do a Ph.D. in a field y<strong>ou do not plan on s</strong>taying in for the long haul. Ideally, you would keep this thought in the back of your head during your Ph.D. Try to keep a finger in the pie that does <strong>interest you. Read</strong> the \"other\" field's publications. If possible, make contacts there. Perhaps do a side gig or a collaboration. Bonus points if you find a way to combine your current and your target field in some way.</p>",
+      "id": 13
+    }
+  ]
+}

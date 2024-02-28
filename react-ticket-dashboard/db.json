@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "firstName": "Piyush",
+      "lastName": "Dudhat",
+      "email": "pd@gmail.com",
+      "password": "Piyush@123",
+      "role": "Admin",
+      "id": 1
+    },
+    {
+      "firstName": "Raj",
+      "lastName": "Khann",
+      "email": "raj@gmail.com",
+      "password": "Raj@1234",
+      "role": "User",
+      "id": 2
+    },
+    {
+      "firstName": "Shyam",
+      "lastName": "Raj",
+      "email": "shyam@gmail.com",
+      "password": "Shyam@123",
+      "role": "User",
+      "id": 3
+    },
+    {
+      "firstName": "Rahul",
+      "lastName": "Savaliya",
+      "email": "dadik@mailinator.com",
+      "password": "Piyush@123",
+      "role": "Admin",
+      "id": 4
+    }
+  ],
+  "ticket": [
+    {
+      "title": "Attend Meeting",
+      "description": "All Employees",
+      "name": "Shyam Raj",
+      "tags": "Replace",
+      "priority": "Medium",
+      "date": "1/11/2024",
+      "createdBy": "Piyush Dudhat",
+      "id": 1
+    },
+    {
+      "title": "Debate ",
+      "description": "as",
+      "name": "Raj Khann",
+      "tags": "New",
+      "priority": "Low",
+      "date": "1/11/2024",
+      "createdBy": "Rahul Savaliya",
+      "id": 2
+    },
+    {
+      "title": "lorem ",
+      "description": "ipsum",
+      "name": "Raj Khann",
+      "tags": "Issue",
+      "priority": "High",
+      "date": "1/11/2024",
+      "createdBy": "Piyush Dudhat",
+      "id": 3
+    },
+    {
+      "title": "new ticket ",
+      "description": "asdfasadfs",
+      "name": "Piyush Dudhat",
+      "tags": "Issue",
+      "priority": "Low",
+      "date": "1/11/2024",
+      "createdBy": "Rahul Savaliya",
+      "id": 4
+    },
+    {
+      "title": "testing",
+      "description": "workijgfuijhgkh",
+      "name": "Piyush Dudhat",
+      "tags": "Replace",
+      "priority": "High",
+      "date": "1/11/2024",
+      "createdBy": "Rahul Savaliya",
+      "id": 5
+    },
+    {
+      "title": "3434343",
+      "description": "34534543",
+      "name": "Shyam Raj",
+      "tags": "New",
+      "priority": "High",
+      "date": "1/11/2024",
+      "createdBy": "Rahul Savaliya",
+      "id": 6
+    },
+    {
+      "title": "Arprprprprprprp",
+      "description": "bbbcbcbcbbcbbcbc",
+      "name": "Raj Khann",
+      "tags": "Issue",
+      "priority": "Low",
+      "date": "1/11/2024",
+      "createdBy": "Shyam Raj",
+      "id": 11
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+  "admin": [
+    {
+      "firstName": "Arjun",
+      "lastName": "Singh",
+      "email": "singharjun.u@gmail.com",
+      "password": "Arjun@12345",
+      "id": 199,
+      "uuid": "2d6a3f88-84bc-4020-8f51-c3f7b4aec667"
+    }
+  ],
+  "customer": [
+    {
+      "firstName": "Arjun",
+      "lastName": "Singh",
+      "email": "singharjun.u@gmail.com",
+      "password": "Ar@123456",
+      "uuid": "a0989b31-0ebc-4996-ab1b-2e1c6d73745d",
+      "id": 201
+    },
+    {
+      "firstName": "Piyush",
+      "lastName": "Dudhat",
+      "email": "dadik@mailinator.com",
+      "password": "Pd@112233",
+      "uuid": "f5e26a18-f889-49a0-9c61-96a6f6489f37",
+      "id": 202
+    },
+    {
+      "firstName": "Samadhan",
+      "lastName": "Sejal",
+      "email": "player@gmail.com",
+      "password": "Sejal@12345",
+      "uuid": "74a85fcc-43bb-47df-af08-4ab322c2cf3c",
+      "id": 203
+    },
+    {
+      "firstName": "Bhavesh ",
+      "lastName": "Patil",
+      "email": "dadik@mailinator.com",
+      "password": "Singh@112233",
+      "uuid": "2eba4cbf-e0a7-4e39-9bf9-49e91f55b8ef",
+      "id": 204
+    }
+  ],
+
+
+
+
+
+    "cart": []
